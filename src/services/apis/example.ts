@@ -2,7 +2,7 @@ import { EXAMPLE_API_URL } from '@/constants/apis';
 import { CommonResponse } from '@/types/common';
 import HttpClient from '@/utils/axios-config';
 
-export class Example {
+class ExampleAPI {
   public exampleFunction() {
     const url = EXAMPLE_API_URL.API_URL;
     return HttpClient.get<null, CommonResponse>(url);
@@ -13,3 +13,6 @@ export class Example {
     return HttpClient.post<null, CommonResponse>(url, params);
   }
 }
+
+const Example = new ExampleAPI();
+export default Example;

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@reduxjs/toolkit": "^1.9.5",
@@ -19,7 +21,9 @@
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
     "i18next": "^23.2.1",
+    "lodash": "^4.17.21",
     "next": "13.4.6",
+    "next-i18next": "^14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^13.0.0",
@@ -28,5 +32,8 @@
   },
   "main": "index.js",
   "author": "chiendc <chienzxzx33@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/lodash": "^4.14.195"
+  }
 }

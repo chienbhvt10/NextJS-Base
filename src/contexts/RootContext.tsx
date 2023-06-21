@@ -1,3 +1,4 @@
+'use client';
 import { Dispatch, PropsWithChildren, createContext, useState } from 'react';
 
 export interface RootContextValues {
