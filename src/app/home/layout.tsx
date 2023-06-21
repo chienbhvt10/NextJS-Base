@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 interface Props {}
 
@@ -7,8 +7,11 @@ export const metadata = {
   description: 'Home of this app',
 };
 
-const HomeLayout = (props: Props) => {
-  return <div>HomeLayout</div>;
+const HomeLayout: React.FunctionComponent<PropsWithChildren<Props>> = (
+  props
+) => {
+  const { children } = props;
+  return <div>{children}</div>;
 };
 
 export default HomeLayout;
