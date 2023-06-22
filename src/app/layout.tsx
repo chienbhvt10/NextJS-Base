@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import HomeLayout from './home/layout';
 
 export const metadata = {
   title: 'Home Page',

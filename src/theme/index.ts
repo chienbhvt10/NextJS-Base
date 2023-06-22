@@ -19,66 +19,16 @@ interface Neutral {
   900: string;
 }
 
-export interface VShip {
-  search: {
-    main: string;
-  };
-
-  link: {
-    main: string;
-  };
-
-  product: {
-    main: string;
-    hover: string;
-    important: string;
-    important2: string;
-    bg: string;
-    shadow: string;
-    shadowHover: string;
-  };
-
-  text: {
-    important: string;
-    important2: string;
-    disabled: string;
-    disabled2: string;
-    gray: string;
-    orange: string;
-    lightBlue: string;
-    darkOrange: string;
-  };
-
-  border: {
-    main: string;
-    lightGray: string;
-    lightBlue: string;
-    darkOrange: string;
-  };
-
-  searchCatagorySelect: {
-    border: string;
-    color: string;
-    background: string;
-  };
-
+export interface CustomTheme {
   background: {
-    lightBlue: string;
-    gray: string;
-    white: string;
-    darkOrange: string;
-    lightOrange: string;
-  };
-
-  tos: {
-    menuBackground: string;
+    sideBar: string;
   };
 }
 
 declare module '@mui/material/styles' {
   interface Palette {
     neutral: Neutral;
-    vShip: VShip;
+    customTheme: CustomTheme;
   }
 
   interface TypographyVariants {
@@ -91,7 +41,7 @@ declare module '@mui/material/styles' {
 
   interface PaletteOptions {
     neutral: Neutral;
-    vShip: VShip;
+    customTheme: CustomTheme;
   }
 }
 

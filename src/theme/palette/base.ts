@@ -1,5 +1,4 @@
 import type { ThemeOptions } from '@mui/material';
-import type {} from '@mui/lab/themeAugmentation';
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
@@ -27,12 +26,7 @@ const base: ThemeOptions = {
       xl: 1536,
     },
   },
-  typography: {
-    productCardPrice: {
-      fontSize: '0.85rem',
-      display: 'block',
-    },
-  },
+
   components: {
     MuiTextField: {
       defaultProps: {
@@ -65,17 +59,17 @@ const base: ThemeOptions = {
         },
       },
     },
-    MuiLoadingButton: {
-      defaultProps: {
-        variant: 'contained',
-        size: 'small',
-      },
-      styleOverrides: {
-        root: {
-          textTransform: 'none',
-        },
-      },
-    },
+    // MuiLoadingButton: {
+    //   defaultProps: {
+    //     variant: 'contained',
+    //     size: 'small',
+    //   },
+    //   styleOverrides: {
+    //     root: {
+    //       textTransform: 'none',
+    //     },
+    //   },
+    // },
     MuiAvatar: {
       styleOverrides: {
         root: {

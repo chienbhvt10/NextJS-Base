@@ -1,5 +1,5 @@
 import type { ThemeOptions } from '@mui/material';
-import type { VShip } from 'theme';
+import { CustomTheme } from '..';
 
 const neutral = {
   100: '#F3F4F6',
@@ -13,53 +13,9 @@ const neutral = {
   900: '#111827',
 };
 
-const vShip: VShip = {
-  search: {
-    main: '#ee4468',
-  },
-  link: {
-    main: '#666668',
-  },
-  product: {
-    main: '#ee4468',
-    hover: '#666668',
-    important: '#FF3945',
-    important2: '#FF393999',
-    bg: '#f5f5f5',
-    shadow: '0px 1px 3px rgb(3 0 71 / 9%)',
-    shadowHover: '0px 8px 45px rgb(3 0 71 / 9%)',
-  },
-  text: {
-    important: '#FF3945',
-    important2: '#FF393999',
-    disabled: '#999',
-    disabled2: '#ccc',
-    gray: '#7a7a7a',
-    orange: '#FF6800',
-    lightBlue: '#089CD0',
-    darkOrange: '#ee4d2d',
-  },
-  border: {
-    main: '#E6E8F0',
-    lightGray: '#bdbdbd',
-    lightBlue: '#0088FF',
-    darkOrange: '#ee4d2d',
-  },
-  searchCatagorySelect: {
-    border: '1px solid #dadde9',
-    color: 'rgba(0, 0, 0, 0.87)',
-    background: 'rgba(217, 217, 217, 0.50)',
-  },
+const customTheme: CustomTheme = {
   background: {
-    lightBlue: '#D8E0F5',
-    gray: '#f9f9f9',
-    white: '#FFF',
-    darkOrange: '#ee4d2d',
-    lightOrange: '#fff3f3',
-  },
-  tos: {
-    menuBackground:
-      'linear-gradient(180deg, rgba(9, 99, 110, 0.57) 0%, rgba(7, 115, 194, 0.57) 100%)',
+    sideBar: '#58cdb3',
   },
 };
 
@@ -211,7 +167,7 @@ const light: ThemeOptions = {
     success,
     text,
     warning,
-    vShip,
+    customTheme,
   },
   shadows: [
     'none',
