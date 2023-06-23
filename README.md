@@ -5,19 +5,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, pull project + install package using yarn or npm or pnpm:
 
 ```bash
-    npm install
-    #or
-    yarn
+yarn
 ```
 
 Second, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
+```
+
+Every update api from graphql, run this command for generate api and type
+
+```bash
+yarn code gen
+#or
+yarn codegen-ts
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -25,6 +27,27 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Project structure
+
+```
+project
+│   README.md
+│   file001.txt
+│
+└───folder1
+│   │   file011.txt
+│   │   file012.txt
+│   │
+│   └───subfolder1
+│       │   file111.txt
+│       │   file112.txt
+│       │   ...
+│
+└───folder2
+    │   file021.txt
+    │   file022.txt
+```
 
 ## Learn More
 
