@@ -4,7 +4,7 @@ import axios, {
   AxiosRequestConfig,
   AxiosResponse,
 } from 'axios';
-import { baseApiServerURL } from './config';
+import { ApiServerURL } from './config';
 import LocalStorage from './LocalStorage';
 
 const headers: AxiosRequestConfig['headers'] = {
@@ -16,7 +16,7 @@ class Axios {
   private interceptor: number | null = null;
 
   constructor() {
-    const instance = axios.create({ baseURL: baseApiServerURL, headers });
+    const instance = axios.create({ baseURL: ApiServerURL, headers });
 
     // Config request interceptor
     instance.interceptors.request.use(
