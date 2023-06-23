@@ -31,22 +31,56 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Project structure
 
 ```
-project
-│   README.md
-│   file001.txt
+Project structure root tree
+|
+│   README.md                                       --- Project guide
+│   .env                                            --- Project environment variables
+│   .eslintrc.json                                  --- Eslint configuration for project
+|   .gitignore                                      --- Git ignore configuration
+|   .prettierignore                                 --- Prettier ignore configuration for project
+|   .prettierrc                                     --- Prettier configuration for project
+|   codegen.yml                                     --- Graphql code generation configuration for project file yml
+|   graphql-codegen-config.ts                       --- Graphql code generation configuration for project file ts
+|   next.config.js                                  --- Nextjs custom configuration for project
+|   package.json                                    --- Nodemodules dependencies configuration and installation for project
+|   tsconfig.json                                   --- Typescript configuration for project
+|   yarn.lock                                       --- Save yarn lock file when install package
+|
+└───Public directory
+|   |
+│   └───images directory                            --- Save images file
 │
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
-│   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
-│
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───Src directory
+|   |
+│   └───app directory                               --- Save pages routers and views
+|   |
+│   └───components directory                        --- Save components common for all modules in project
+|   |
+│   └───constants directory                         --- Save constants
+|   |
+│   └───contexts directory                          --- Save defined contexts
+|   |
+│   └───hoc directory                               --- Save defined custom HOC
+|   |
+│   └───hooks directory                             --- Save defined custom hooks
+|   |
+│   └───layouts directory                           --- Save defined layouts
+|   |
+│   └───services directory                          --- Save defined services
+│   |   |
+|   |   └───apis directory                          --- Save defined apis from axios and servers
+│   |   |
+|   |   └───graphql directory                       --- Save defined apis from graphql servers
+|   |
+|   |   grapql-codegen.ts                           --- Save graphql codegen file
+│   |
+│   └───theme directory                             --- Save defined theme
+|   |
+│   └───types directory                             --- Save defined types
+|   |
+│   └───utils directory                             --- Save defined utils functions or configuration
+
+
 ```
 
 ## Learn More
