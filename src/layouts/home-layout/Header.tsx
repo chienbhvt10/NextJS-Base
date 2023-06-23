@@ -1,10 +1,9 @@
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/material/styles';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export const drawerWidth = 240;

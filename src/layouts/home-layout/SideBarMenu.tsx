@@ -1,5 +1,4 @@
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import Image from 'next/image';
 import SideBarItem from './SideBarItems';
 
@@ -22,34 +21,58 @@ const listItems: ListItemType[] = [
   {
     title: 'Test',
     path: '#',
-    icon: <Image src="/images/home.png" alt="" width={25} height={25} />,
+    icon: (
+      <Image
+        src="/images/home.png"
+        alt=""
+        width={25}
+        height={25}
+        priority={true}
+      />
+    ),
     subItems: [
       {
         title: 'Test',
         path: '/home',
-        icon: <Image src="/images/home.png" alt="" width={18} height={18} />,
+        icon: (
+          <Image src="/images/home.png" alt="" width={18} priority={true} />
+        ),
       },
       {
         title: 'Test',
         path: '#',
-        icon: <Image src="/images/home.png" alt="" width={18} height={18} />,
+        icon: (
+          <Image src="/images/home.png" alt="" width={18} priority={true} />
+        ),
       },
     ],
   },
   {
     title: 'Test',
     path: '#',
-    icon: <Image src="/images/home.png" alt="" width={25} height={25} />,
+    icon: (
+      <Image
+        src="/images/home.png"
+        alt=""
+        width={25}
+        height={25}
+        priority={true}
+      />
+    ),
     subItems: [
       {
         title: 'Test',
         path: '#',
-        icon: <Image src="/images/home.png" alt="" width={18} height={18} />,
+        icon: (
+          <Image src="/images/home.png" alt="" width={18} priority={true} />
+        ),
       },
       {
         title: 'Test',
         path: '#',
-        icon: <Image src="/images/home.png" alt="" width={18} height={18} />,
+        icon: (
+          <Image src="/images/home.png" alt="" width={18} priority={true} />
+        ),
       },
     ],
   },
