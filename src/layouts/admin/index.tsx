@@ -1,12 +1,13 @@
-import { PropsWithChildren, useState } from 'react';
+'use client';
+import { Fragment, PropsWithChildren, useState } from 'react';
 import SideBar from './SideBar';
 import Header from './Header';
 import ContentBounder from './ContentBounder';
 
-interface HomeLayoutProps {}
+interface AdminLayoutProps {}
 
-const HomeLayout: React.FunctionComponent<
-  PropsWithChildren<HomeLayoutProps>
+const AdminLayoutBounder: React.FunctionComponent<
+  PropsWithChildren<AdminLayoutProps>
 > = (props) => {
   const { children } = props;
   const [open, setOpen] = useState(false);
@@ -20,12 +21,12 @@ const HomeLayout: React.FunctionComponent<
   };
 
   return (
-    <>
+    <Fragment>
       <Header handleDrawerOpen={handleDrawerOpen} open={open} />
       <SideBar handleDrawerClose={handleDrawerClose} open={open} />
       <ContentBounder open={open}>{children}</ContentBounder>
-    </>
+    </Fragment>
   );
 };
 
-export default HomeLayout;
+export default AdminLayoutBounder;

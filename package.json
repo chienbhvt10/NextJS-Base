@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "codegen": "graphql-codegen --config codegen.yml",
     "codegen-ts": "graphql-codegen --config graphql-codegen-config.ts"
-
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

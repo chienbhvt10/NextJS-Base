@@ -1,19 +1,28 @@
-import { Typography } from '@mui/material';
-import HomeLayout from './home/layout';
+'use client';
+import GlobalBaseline from '@/components/styled/GlobalBaseline';
+import { RootProvider } from '@/contexts/RootContext';
+import { SettingsProvider } from '@/contexts/SettingsContext';
+import i18n from '@/i18n';
+import { CssBaseline } from '@mui/material';
+import { FC, PropsWithChildren } from 'react';
+import { I18nextProvider } from 'react-i18next';
 
-export const metadata = {
-  title: 'Home Page',
-  description: 'Home Page',
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const ClientLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
+    // Root layouts must contain html and body tags.
     <html>
-      <body>{children}</body>
+      <body>
+        <RootProvider>
+          <SettingsProvider>
+            <I18nextProvider i18n={i18n}>
+              <CssBaseline />
+              <GlobalBaseline />
+              {children}{' '}
+            </I18nextProvider>
+          </SettingsProvider>
+        </RootProvider>
+      </body>
     </html>
   );
-}
+};
+export default ClientLayout;

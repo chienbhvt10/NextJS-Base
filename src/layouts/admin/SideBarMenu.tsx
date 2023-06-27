@@ -35,14 +35,26 @@ const listItems: ListItemType[] = [
         title: 'Test',
         path: '/home',
         icon: (
-          <Image src="/images/home.png" alt="" width={18} priority={true} />
+          <Image
+            src="/images/home.png"
+            alt=""
+            width={18}
+            height={18}
+            priority={true}
+          />
         ),
       },
       {
         title: 'Test',
         path: '#',
         icon: (
-          <Image src="/images/home.png" alt="" width={18} priority={true} />
+          <Image
+            src="/images/home.png"
+            alt=""
+            width={18}
+            height={18}
+            priority={true}
+          />
         ),
       },
     ],
@@ -64,14 +76,26 @@ const listItems: ListItemType[] = [
         title: 'Test',
         path: '#',
         icon: (
-          <Image src="/images/home.png" alt="" width={18} priority={true} />
+          <Image
+            src="/images/home.png"
+            alt=""
+            width={18}
+            height={18}
+            priority={true}
+          />
         ),
       },
       {
         title: 'Test',
         path: '#',
         icon: (
-          <Image src="/images/home.png" alt="" width={18} priority={true} />
+          <Image
+            src="/images/home.png"
+            alt=""
+            width={18}
+            height={18}
+            priority={true}
+          />
         ),
       },
     ],
