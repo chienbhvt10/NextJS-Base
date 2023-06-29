@@ -4,6 +4,7 @@ import LocalStorage from '@/utils/LocalStorage';
 import type { Direction } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTranslation } from 'next-i18next';
 import {
   PropsWithChildren,
   createContext,
@@ -12,7 +13,6 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useTranslation } from 'next-i18next';
 
 interface Settings {
   direction?: Direction;
@@ -78,4 +78,4 @@ const SettingsProvider: React.FunctionComponent<PropsWithChildren> = (
 };
 
 const SettingsConsumer = SettingsContext.Consumer;
-export { SettingsContext as default, SettingsProvider, SettingsConsumer };
+export { SettingsConsumer, SettingsProvider, SettingsContext as default };

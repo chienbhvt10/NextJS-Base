@@ -11,7 +11,6 @@ const RootContext = createContext<RootContextValues | null>(null);
 const RootProvider: React.FC<PropsWithChildren> = (props) => {
   const { children } = props;
   const [exampleState, setExampleState] = useState<any>();
-
   return (
     <RootContext.Provider value={{ exampleState, setExampleState }}>
       {children}
@@ -20,4 +19,4 @@ const RootProvider: React.FC<PropsWithChildren> = (props) => {
 };
 
 const RootConsumer = RootContext.Consumer;
-export { RootContext as default, RootProvider, RootConsumer };
+export { RootConsumer, RootProvider, RootContext as default };

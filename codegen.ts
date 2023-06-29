@@ -1,18 +1,13 @@
-import { ApiServerURL } from '@/utils/config';
+import { ApiServerGrapqhlURL } from './src/utils/config';
 import { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: ApiServerURL,
-  documents: 'src/**/*.graphql',
+  schema: ApiServerGrapqhlURL,
+  documents: ['src/**/*.graphql'],
   generates: {
-    'src/services/graphql-gen.ts': {
+    './src/services/graphql-gen/': {
       preset: 'client',
-      plugins: [
-        'typescript',
-        'typescript-operations',
-        'typescript-graphql-request',
-      ],
       config: {
         useTypeImports: true,
         omitOperationSuffix: true,
@@ -21,5 +16,4 @@ const config: CodegenConfig = {
     },
   },
 };
-
 export default config;
