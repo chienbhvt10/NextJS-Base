@@ -5,7 +5,7 @@ import axios, {
   AxiosResponse,
 } from 'axios';
 import { ApiServerURL } from './config';
-import LocalStorage from './LocalStorage';
+import LocalStorage from './local-storage';
 
 const headers: AxiosRequestConfig['headers'] = {
   'Content-Type': 'application/json',

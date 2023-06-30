@@ -1,0 +1,3 @@
+mutation createClass($input: CreateClassInput!) {
+  createClass(input: $input)
+}

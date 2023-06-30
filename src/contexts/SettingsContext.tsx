@@ -1,6 +1,6 @@
 'use client';
 import createAppTheme from '@/theme';
-import LocalStorage from '@/utils/LocalStorage';
+import LocalStorage from '@/utils/local-storage';
 import type { Direction } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
