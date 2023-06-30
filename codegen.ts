@@ -6,8 +6,12 @@ const config: CodegenConfig = {
   schema: ApiServerGrapqhlURL,
   documents: ['src/**/*.graphql'],
   generates: {
-    './src/services/graphql-gen/': {
-      preset: 'client',
+    './src/services/graphql-gen.ts': {
+      plugins: [
+        'typescript',
+        'typescript-operations',
+        'typescript-graphql-request',
+      ],
       config: {
         useTypeImports: true,
         omitOperationSuffix: true,

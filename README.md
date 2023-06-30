@@ -64,7 +64,7 @@ Project structure root tree
 |   |
 │   └───services directory          --- Save defined services
 |   |
-|   |   grapql-codegen.ts           --- Save graphql codegen file
+|   |   graphql-gen.ts              --- Save graphql codegen file
 |   |
 │   |   |
 |   |   └───apis directory          --- Save defined apis from axios and servers
