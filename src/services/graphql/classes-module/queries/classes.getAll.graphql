@@ -1,0 +1,5 @@
+query getAllClasses {
+  getAllClasses {
+    ...IClasses
+  }
+}
