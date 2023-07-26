@@ -6,7 +6,7 @@ const ClientLayoutBounder: FC<PropsWithChildren<ClientLayoutProps>> = (
   props
 ) => {
   const { children } = props;
-  return <Fragment>Làm layout client đê{children}</Fragment>;
+  return <Fragment>{children}</Fragment>;
 };
 
 export default ClientLayoutBounder;

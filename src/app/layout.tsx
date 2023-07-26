@@ -21,7 +21,7 @@ const ClientLayout: FC<PropsWithChildren> = ({ children }) => {
               <I18nextProvider i18n={i18n}>
                 <CssBaseline />
                 <GlobalBaseline />
-                {children}{' '}
+                {children}
               </I18nextProvider>
             </SettingsProvider>
           </RootProvider>
