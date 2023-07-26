@@ -15,9 +15,12 @@ interface LandingPageProps {}
 const LandingPage = (props: LandingPageProps) => {
   return (
     <Container maxWidth="xs">
-      <Paper elevation={4} sx={{ p: 2 }} variant="elevation">
+      <Paper elevation={4} sx={{ p: 3 }} variant="elevation">
         <form>
           <Stack direction="column" spacing={2}>
+            <Typography variant="h4" align="center" sx={{ mb: 2 }}>
+              Title Here
+            </Typography>
             <TextField label="Username" variant="outlined" />
             <TextField label="Password" variant="outlined" />
             <Button type="submit">Login</Button>
