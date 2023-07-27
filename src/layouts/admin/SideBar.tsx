@@ -23,7 +23,7 @@ const SideBar = (props: Props) => {
       open={open}
       PaperProps={{
         sx: {
-          backgroundColor: theme.palette.customTheme?.background?.sideBar,
+          backgroundColor: theme.palette.primary.main,
         },
       }}
     >

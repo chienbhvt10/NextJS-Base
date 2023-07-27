@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/material/styles';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const drawerWidth = 240;
 
@@ -19,8 +20,11 @@ interface Props extends AppBarProps {
 const Header = (props: Props) => {
   const { handleDrawerOpen, open } = props;
   const pathname = usePathname();
+  const router = useRouter();
 
-  const onLogout = () => {};
+  const onLogout = () => {
+    router.push('/');
+  };
 
   return (
     <AppBar position="fixed" open={open}>
@@ -48,6 +52,9 @@ const Header = (props: Props) => {
             </IconButton>
           )}
         </Box>
+        <IconButton onClick={onLogout}>
+          <LogoutIcon color="primary" />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );

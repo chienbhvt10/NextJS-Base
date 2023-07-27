@@ -5,10 +5,10 @@ interface LinkTextCustomProps extends TypographyProps {
 }
 
 const LinkTextCustom = (props: LinkTextCustomProps) => {
-  const { linkText } = props;
+  const { linkText, ...rest } = props;
   return (
     <Typography
-      {...props}
+      {...rest}
       variant="body2"
       sx={{ fontStyle: 'italic', opacity: 0.6 }}
     >
