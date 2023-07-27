@@ -13,7 +13,7 @@ const ClientLayoutBounder: FC<PropsWithChildren<ClientLayoutProps>> = (
     <Fragment>
       <Header />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };
