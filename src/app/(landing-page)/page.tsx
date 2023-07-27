@@ -20,6 +20,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ExitToAppIcon from '@mui/icons-material/Logout';
+import Image from 'next/image';
 
 interface LandingPageProps {}
 
@@ -115,7 +116,9 @@ const LandingPage = (props: LandingPageProps) => {
                 </>
               )}
             />
-            <Button type="submit">Login</Button>
+            <Button type="submit" endIcon={<ExitToAppIcon />}>
+              Login
+            </Button>
             <Button
               type="button"
               onClick={() => router.push('client')}
@@ -131,9 +134,51 @@ const LandingPage = (props: LandingPageProps) => {
             <LinkTextCustom linkText="Use other account" align="center" />
 
             <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
-              <Button type="button">Google</Button>
-              <Button type="button">Facebook</Button>
-              <Button type="button">Twitter</Button>
+              <Button
+                type="button"
+                variant="outlined"
+                color="success"
+                endIcon={
+                  <Image
+                    alt="icon-google"
+                    src="/images/google.png"
+                    width={18}
+                    height={18}
+                  />
+                }
+              >
+                Google
+              </Button>
+              <Button
+                type="button"
+                variant="outlined"
+                color="success"
+                endIcon={
+                  <Image
+                    alt="icon-google"
+                    src="/images/facebook.png"
+                    width={18}
+                    height={18}
+                  />
+                }
+              >
+                Facebook
+              </Button>
+              <Button
+                type="button"
+                variant="outlined"
+                color="success"
+                endIcon={
+                  <Image
+                    alt="icon-google"
+                    src="/images/twitter.png"
+                    width={18}
+                    height={18}
+                  />
+                }
+              >
+                Twitter
+              </Button>
             </Stack>
           </Stack>
         </form>
