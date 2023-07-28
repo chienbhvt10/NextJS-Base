@@ -1,3 +1,4 @@
-export enum ROOT_PATH {
+export enum PATH {
   HOME = '/',
+  MESSAGE_BOX = '/messages',
 }

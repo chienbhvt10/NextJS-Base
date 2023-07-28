@@ -1,25 +1,28 @@
+import {
+  AddCircle,
+  Apps,
+  PermMedia,
+  PlusOne,
+  Send,
+  ThumbUp,
+} from '@mui/icons-material';
+import BrightnessLowIcon from '@mui/icons-material/BrightnessLow';
+import RateReviewIcon from '@mui/icons-material/RateReview';
 import SearchIcon from '@mui/icons-material/Search';
+import VideocamIcon from '@mui/icons-material/Videocam';
 import {
   Avatar,
   Box,
   Divider,
   IconButton,
   InputAdornment,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Stack,
   TextField,
   Typography,
   useTheme,
 } from '@mui/material';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import BrightnessLowIcon from '@mui/icons-material/BrightnessLow';
-import RateReviewIcon from '@mui/icons-material/RateReview';
-import VideocamIcon from '@mui/icons-material/Videocam';
 import moment from 'moment';
-import { Send } from '@mui/icons-material';
 
 interface BoxChatProps {}
 
@@ -31,6 +34,8 @@ const BoxChat = (props: BoxChatProps) => {
       text,
     },
   } = useTheme();
+
+  const onSendMessage = () => {};
 
   return (
     <Stack spacing={0} direction="column" sx={{ width: 1 }}>
@@ -45,9 +50,9 @@ const BoxChat = (props: BoxChatProps) => {
       >
         <Stack
           direction="column"
-          spacing={2}
+          spacing={0}
           sx={{
-            py: 1,
+            pt: 2,
             position: 'sticky',
             top: 0,
             left: 0,
@@ -57,7 +62,11 @@ const BoxChat = (props: BoxChatProps) => {
         >
           <Stack
             direction="row"
-            sx={{ justifyContent: 'space-between', mb: 1, px: 2 }}
+            sx={{
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              px: 2,
+            }}
           >
             <Typography variant="h5">Chat</Typography>
             <Stack direction="row" spacing="1">
@@ -72,7 +81,7 @@ const BoxChat = (props: BoxChatProps) => {
               </IconButton>
             </Stack>
           </Stack>
-          <Box sx={{ px: 2, display: 'hidden' }}>
+          <Box sx={{ px: 2, display: 'none' }}>
             <TextField
               label="Search"
               variant="outlined"
@@ -87,19 +96,23 @@ const BoxChat = (props: BoxChatProps) => {
               }}
             />
           </Box>
-          <Divider />
+          <Divider sx={{ pt: 2 }} />
         </Stack>
-        <List sx={{ zIndex: 5, px: 2 }}>
+        <List sx={{ zIndex: 5, px: 1 }}>
           {messages.map((mes) => (
             <Box
               key={mes.id}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
+                flexDirection: mes.isMe ? 'row-reverse' : 'row',
                 mb: 1,
               }}
             >
-              <Avatar sx={{ height: 35, width: 35 }} />
+              <Avatar
+                src="/images/hoangvi.jpg"
+                sx={{ height: 35, width: 35 }}
+              />
               <Typography
                 variant="body1"
                 sx={{
@@ -108,9 +121,9 @@ const BoxChat = (props: BoxChatProps) => {
                   mx: 2,
                   py: 1,
                   px: 1.5,
-                  bgcolor: background.message1,
+                  bgcolor: mes.isMe ? background.message1 : background.message2,
                   borderRadius: 4,
-                  color: primary.contrastText,
+                  color: mes.isMe ? primary.contrastText : text.primary,
                 }}
               >
                 {mes.content}
@@ -120,21 +133,38 @@ const BoxChat = (props: BoxChatProps) => {
           ))}
         </List>
       </Stack>
-      <Box sx={{ p: 2, mt: 0, bgcolor: 'background.paper' }}>
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{ p: 2, mt: 0, bgcolor: 'background.paper' }}
+      >
+        <IconButton onClick={onSendMessage}>
+          <AddCircle />
+        </IconButton>
+        <IconButton onClick={onSendMessage}>
+          <Apps />
+        </IconButton>
+        <IconButton onClick={onSendMessage}>
+          <PermMedia />
+        </IconButton>
         <TextField
-          label="Search"
           variant="outlined"
           size="small"
           InputProps={{
             sx: { borderRadius: 15 },
             endAdornment: (
               <InputAdornment position="end">
-                <Send />
+                <IconButton onClick={onSendMessage}>
+                  <Send />
+                </IconButton>
               </InputAdornment>
             ),
           }}
         />
-      </Box>
+        <IconButton onClick={onSendMessage}>
+          <ThumbUp />
+        </IconButton>
+      </Stack>
     </Stack>
   );
 };
@@ -172,7 +202,7 @@ const messages = [
       'The Menu component uses the Popover component internally. However, you might want to use a different positioning strategy, or not blocking the scroll. For answering those needs, we expose a MenuList component that you can compose, with Popper in this example.',
     time: moment(Date.now()).format('hh:mm'),
     userId: 1,
-    isMe: false,
+    isMe: true,
   },
   {
     id: 1,
@@ -203,7 +233,7 @@ const messages = [
     content: 'The Menu component uses the Popover component internally. ',
     time: moment(Date.now()).format('hh:mm'),
     userId: 1,
-    isMe: false,
+    isMe: true,
   },
   {
     id: 1,
