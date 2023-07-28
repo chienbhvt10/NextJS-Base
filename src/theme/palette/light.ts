@@ -16,6 +16,8 @@ const neutral = {
 const customTheme: CustomTheme = {
   background: {
     sideBar: '#58cdb3',
+    message1: '#0084ff',
+    message2: '#e4e6eb',
   },
 };
 

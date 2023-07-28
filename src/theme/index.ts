@@ -22,6 +22,8 @@ interface Neutral {
 export interface CustomTheme {
   background: {
     sideBar: string;
+    message1: string;
+    message2: string;
   };
 }
 
