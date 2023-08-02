@@ -1,4 +1,5 @@
 'use client';
+import { socketURL } from '@/utils/config';
 import {
   Dispatch,
   PropsWithChildren,
@@ -12,6 +13,9 @@ import { io } from 'socket.io-client';
 export interface RootContextValues {
   exampleState: any;
   setExampleState: Dispatch<any>;
+  onClickSendMessage: () => void;
+  onClickJoinChat: () => void;
+  onTyping: () => void;
 }
 
 const RootContext = createContext<RootContextValues | null>(null);
@@ -25,7 +29,7 @@ const RootProvider: React.FC<PropsWithChildren> = (props) => {
   const [name, setName] = useState('');
   const [status, setStatus] = useState('fail');
 
-  const socket = io('http://localhost:8000');
+  const socket = useMemo(() => io(socketURL), []);
 
   useEffect(() => {
     socket.on('receive-mes', (data: string) => {
@@ -35,6 +39,19 @@ const RootProvider: React.FC<PropsWithChildren> = (props) => {
     socket.on('receive-status', (data) => {
       console.log(data);
       setStatus(data);
+    });
+
+    socket.on('typing', ({ name, isTyping }) => {
+      if (isTyping) {
+      }
+    });
+
+    socket.on('connect-socket', ({ message }) => {
+      console.log(message);
+    });
+
+    socket.on('disconnect-socket', ({ message }) => {
+      console.log(message);
     });
   }, [socket]);
 
@@ -49,8 +66,20 @@ const RootProvider: React.FC<PropsWithChildren> = (props) => {
     }
   };
 
+  const onTyping = () => {
+    socket.emit('typing', { isTyping: true });
+  };
+
   return (
-    <RootContext.Provider value={{ exampleState, setExampleState }}>
+    <RootContext.Provider
+      value={{
+        exampleState,
+        setExampleState,
+        onClickJoinChat,
+        onClickSendMessage,
+        onTyping,
+      }}
+    >
       {children}
     </RootContext.Provider>
   );
