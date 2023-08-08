@@ -1,5 +1,5 @@
-query getAClass {
-  getAClass {
+query getAClass($id: String!) {
+  getAClass(id: $id) {
     ...IClasses
   }
 }

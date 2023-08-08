@@ -1,3 +1,5 @@
 mutation createClass($input: CreateClassInput!) {
-  createClass(input: $input)
+  createClass(input: $input) {
+    ...IClasses
+  }
 }

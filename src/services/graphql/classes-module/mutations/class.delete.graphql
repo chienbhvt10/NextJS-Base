@@ -1,3 +1,5 @@
 mutation deleteClass($id: String!) {
-  deleteClass(id: $id)
+  deleteClass(id: $id) {
+    ...IClasses
+  }
 }

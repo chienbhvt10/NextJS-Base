@@ -1,3 +1,5 @@
 mutation updateClass($input: UpdateClassInput!) {
-  updateClass(input: $input)
+  updateClass(input: $input) {
+    ...IClasses
+  }
 }

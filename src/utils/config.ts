@@ -4,7 +4,7 @@ const ApiServerURL = process.env.NEXT_PUBLIC_BASE_URL
 
 const ApiServerGrapqhlURL = process.env.NEXT_PUBLIC_BASE_URL_GRAPHQL
   ? process.env.NEXT_PUBLIC_BASE_URL_GRAPHQL
-  : 'http://192.168.35.157:3000/graphql';
+  : 'http://localhost:8000/graphql';
 
 const socketURL = process.env.NEXT_PUBLIC_BASE_SOCKET_URL
   ? process.env.NEXT_PUBLIC_BASE_SOCKET_URL
