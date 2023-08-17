@@ -1,4 +1,4 @@
-import HomePage from '@/components/client-side/home';
+import HomePage from '@/components/home';
 
 interface TestPageProps {}
 

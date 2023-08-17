@@ -1,4 +1,4 @@
-import ProfilePage from '@/components/client-side/profile';
+import ProfilePage from '@/components/profile';
 
 interface ProfileProps {}
 

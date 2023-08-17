@@ -6,7 +6,7 @@ export const useGetAClassQuery = () => {
   const sdk = GraphqlClientConfig.getSDK(true);
   const data = useQuery({
     queryKey: ['getAClass'],
-    queryFn: async () => (await sdk.getAClass()).getAClass,
+    queryFn: async () => (await sdk.getAClass({ id: '1' })).getAClass,
   });
   return data;
 };

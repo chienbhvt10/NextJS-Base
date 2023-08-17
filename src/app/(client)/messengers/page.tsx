@@ -1,4 +1,4 @@
-import MessengerPage from '@/components/client-side/messengers';
+import MessengerPage from '@/components/messengers';
 
 interface MessengersProps {}
 
